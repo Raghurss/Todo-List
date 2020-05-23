@@ -1,0 +1,50 @@
+body{
+	background-color: rgba(171, 205, 239, 0.3);
+}
+h1{
+	color: rgb(0,135,189);
+	font-family: "Book Antiqua";
+	font-size: 80px;
+	text-align: center;
+}
+div{
+	text-align: left;
+	width: 40%;
+	position:relative;
+	left: 38%;
+	
+}
+ul{
+	text-align: left;
+	width: 40%;
+	position:relative;
+	left: 37%;
+	font-family: 'Segoe UI', 'Roboto', arial, 'sans-serif';
+}
+.txt{
+	color: red;
+}
+button{
+	font-size: 20px;
+	border-color: transparent;
+	border-radius: 10px;
+	background-color: rgb(110, 170, 165);
+	-webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+button:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+input{
+	background-color: rgb(230,230,255);
+	border-radius: 5px;
+	border-color: rgb(120,120,255);
+	border-width: 1px;
+	font-size: 20px;
+}
+.narrowwidth{
+	width: 5ch;
+}
+.last{
+	vertical-align: text-bottom;
+}

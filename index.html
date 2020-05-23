@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+            function startTime() {
+                var today = new Date();
+                var day = today.getDate();
+                var month = today.getMonth();
+                var year = today.getFullYear();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                var st = "Date: "+ day + "/" + month + "/" + year + " " + " Clock: " + h+":"+m+":"+s;
+                document.getElementById('txt').innerHTML = st;
+                document.getElementById('txt').style.fontFamily = 'Times New Roman';
+                document.getElementById('txt').style.color = "#0077be";
+                var t = setTimeout(function(){startTime()},500);
+            }
+
+            function checkTime(i) {
+                if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
+    <title>Practical Todos</title>
+    <link id="favicon" rel="icon" href="https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffavicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="stylethis.css">
+  </head>
+  <body onload="startTime()">
+    <div id="txt"></div>
+    <div>
+      
+    </div>
+    <h1>Todo List</h1>
+
+    <div>
+      <button onclick="handlers.toggleAll()">Toggle All</button>
+      <button onclick="handlers.deleteAll()">Delete All</button>
+    </div>
+    <p></p>
+    <div>
+      <button id="EnterButton" onclick="handlers.addTodo()">Add Todo</button>
+      <input id="addTodoTextInput" type="text">
+      <script>
+        var addTodoTextInput = document.getElementById('addTodoTextInput');
+        addTodoTextInput.addEventListener("keyup", function(event){
+        if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("EnterButton").click();
+      }
+    }
+    );
+      </script>
+    </div>
+    <p></p>
+    <div>
+      <button id="EditEnter" onclick="handlers.changeTodo()">Edit Todo</button>
+      <input id="changeTodoPositionInput" type="number" class="narrowwidth">
+      <input id="changeTodoTextInput" type="text">
+      <script>
+        var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+        changeTodoTextInput.addEventListener("keyup", function(event){
+        if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("EditEnter").click();
+      }
+    }
+    );
+      </script>
+    </div>
+    <p></p>
+    
+    <!--<div>
+      <button onclick="handlers.toggleCompleted()">Toggle Todo</button>
+      <input id="toggleCompletedPositionInput" type="number" class="narrowwidth">
+    </div>-->
+    <p></p>
+    <ul>
+    </ul>
+    <script src="client.js">
+       </script>
+  </body>
+</html>
